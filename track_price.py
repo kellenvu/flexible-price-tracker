@@ -21,7 +21,7 @@ SCRIPT_DIRECTORY_ABS_PATH = r''
 
 # Booleans
 HIDE_CHROME_UI = False  # Set to True if you want to hide the Chrome UI while it webscrapes (can lead to issues with some sites)
-PRINT_TO_TXT = True  # Set to True if you want the print() statements to print to a txt file instead of the console (useful if you run this on an auto-scheduler)
+PRINT_TO_TXT = False  # Set to True if you want the print() statements to print to a txt file instead of the console (useful if you run this on an auto-scheduler)
 
 # Notion integration
 NOTION_SECRET = ''
@@ -153,7 +153,7 @@ def main():
                 print(f"{item['name']} costs ${current_price:.2f}")
 
                 if item['last_price'] is None:
-                    continue
+                    item['last_price'] = current_price
 
                 if current_price < float(item['last_price']):
                     item['current_price'] = current_price
