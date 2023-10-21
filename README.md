@@ -50,7 +50,7 @@ By default, it will alert you by posting an entry to a Notion page. You can modi
 
 1. You can run the program once to update the price of each item in the Excel file. Just run `python track_price.py`.
 
-2. If you want the program to run periodically, you can set up a scheduler. On Windows, I followed [these instructions](https://stackoverflow.com/a/43988165) to create a .bat file that runs the program within my desired virtual environment, and then I followed [these instructions](https://helpdeskgeek.com/windows-11/how-to-schedule-a-batch-file-to-run-in-windows-11-10-using-task-scheduler/) to create scheduler that runs this .bat file once per day.
+2. If you want the program to run periodically, you can set up a scheduler. On Windows, I followed [these instructions](https://stackoverflow.com/a/43988165) to create a .bat file that runs the program within my desired virtual environment, and then I followed [these instructions](https://helpdeskgeek.com/windows-11/how-to-schedule-a-batch-file-to-run-in-windows-11-10-using-task-scheduler/) to create a scheduler that runs this .bat file once per day.
 
 ## Setting Up Alerts
 
