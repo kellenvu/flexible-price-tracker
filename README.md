@@ -1,4 +1,4 @@
-# price-tracker
+# flexible-price-tracker
 
 Other programs exist to track the price of items that you're interested in, but they're often restricted to support **specific websites**. This program is a **flexible price tracker**, allowing you to track the price of **any** item you find online on **any** website. If it detects a drop in price, it will alert you.
 
