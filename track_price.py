@@ -14,17 +14,30 @@ from selenium.webdriver.support.ui import WebDriverWait
 ##########
 # CONFIG
 ##########
+
+# Required
 EXCEL_FILEPATH = 'items.xlsx'
 SCRIPT_DIRECTORY_ABS_PATH = r''
+
+# Booleans
+HIDE_CHROME_UI = False  # Set to True if you want to hide the Chrome UI while it webscrapes (can lead to issues with some sites)
+PRINT_TO_TXT = True  # Set to True if you want the print() statements to print to a txt file instead of the console (useful if you run this on an auto-scheduler)
+
+# Notion integration
 NOTION_SECRET = ''
 NOTION_DATABASE_ID = ''
 
+#######
+# CODE
+#######
 
 def alert(items_with_price_drop):
     """
     Alerts the user about items with price drops.
 
     This function posts a message to a Notion page using the Notion API.
+
+    If you would like to be alerted a different way (e.g. print to console, email), then modify this function.
     """
     message = "Price dropped for the following items:\n"
     for item in items_with_price_drop:
@@ -103,7 +116,10 @@ def get_driver():
     chrome_options.add_argument("--log-level=3")
     chrome_options.add_experimental_option(
         'excludeSwitches', ['enable-logging'])
-    # chrome_options.add_argument("--headless")  # Hide UI
+    
+    if HIDE_CHROME_UI:
+        chrome_options.add_argument("--headless")
+
     return webdriver.Chrome(options=chrome_options)
 
 
@@ -111,7 +127,8 @@ def main():
     os.chdir(SCRIPT_DIRECTORY_ABS_PATH)
     
     with open('output.txt', 'w') as f:
-        sys.stdout = f
+        if PRINT_TO_TXT:
+            sys.stdout = f
 
         driver = get_driver()
 
@@ -143,7 +160,7 @@ def main():
                     items_with_price_drop.append(item)
 
             except Exception as e:
-                print(f"Error retrieving price for {item['name']}: {e}")
+                print(f"Error getting price for {item['name']}: {e}")
                 continue
 
         workbook.save(EXCEL_FILEPATH)
