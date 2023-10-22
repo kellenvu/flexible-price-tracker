@@ -1,6 +1,6 @@
-# flexible-price-tracker
+# universal-price-tracker
 
-Other programs exist to track the price of items that you're interested in, but they're often restricted to support **specific websites**. This program is a **flexible price tracker**, allowing you to track the price of **any** item you find online on **any** website. If it detects a drop in price, it will alert you.
+Other programs exist to track the price of items that you're interested in, but they're often restricted to support **specific websites**. This program is a **universal price tracker**, allowing you to track the price of **any** item you find online on **any** website. If it detects a drop in price, it will alert you.
 
 By default, it will alert you by posting an entry to a Notion page. You can modify the code to be alerted however you prefer.
 
