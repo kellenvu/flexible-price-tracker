@@ -18,7 +18,7 @@ By default, it will alert you by posting an entry to a Notion page. You can modi
 
 3. Run `pip install -r requirements.txt`.
 
-4. In the `Config` section of the code, set `SCRIPT_DIRECTORY_ABS_PATH` to be the absolute path to the repository, e.g. `D:\Users\User\Path\To\flexible-price-tracker`.
+4. In the `Config` section of the code, set `SCRIPT_DIRECTORY_ABS_PATH` to be the absolute path to the repository, e.g. `D:\Users\User\Path\To\universal-price-tracker`.
 
 5. Modify the rest of the configuration as desired.
 
