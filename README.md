@@ -28,21 +28,11 @@ By default, it will alert you by posting an entry to a Notion page. You can modi
 
     1. Under `URL`, put the URL of the page that contains the price.
 
-    1. Under `CSS Selector`, put a CSS selector for the price HTML element.
+    1. Under `CSS Selector`, put a comma-delimited list of CSS selectors for the price HTML element. The script will return the first price found using these CSS selectors.
 
-        1. To get the CSS selector, right-click the price and click `Inspect`.
-      
-        ![image](https://github.com/kellenvu/price-tracker/assets/56773806/2c52775e-dbcb-414c-9f50-46535c3d25d9)
+        1. A CSS selector is a pattern that is used to find HTML elements in CSS. To get the CSS selector, right-click the price and click `Inspect` to examine the classes and IDs of the HTML elements associated with the price. Use [combinators](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_selectors/Selectors_and_combinators) to come up with a CSS selector for the price.
 
-        1. Find the HTML element that contains the price, and look for an attribute that is unique to the price. In the example below, we can assume that only the price will have the attribute `data-testid="productdescriptionprice-price"`.
-      
-        ![image](https://github.com/kellenvu/price-tracker/assets/56773806/cd445277-49e2-4f55-bf99-9aeca7a7748f)
-
-       1. Based on the unique attribute, come up with a [CSS selector](https://www.w3schools.com/cssref/css_selectors.php). In this example, the CSS selector would be `[data-testid="productdescriptionprice-price"]`. If you're having difficulty, you can also copy/paste the element into [ChatGPT](https://chat.openai.com/chat), and ask for a CSS selector.
-      
-       ![image](https://github.com/kellenvu/price-tracker/assets/56773806/cd0064d7-6362-4c1b-af0f-0e73cdb0eb96)
-
-   1. Under `Last Tracked Price`, put the current price (e.g. if the price is $68, then put `68`).
+   1. You can leave `Last Tracked Price` empty.
 
 ## Running the Program
 
