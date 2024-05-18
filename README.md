@@ -14,13 +14,11 @@ By default, it will alert you by posting an entry to a Notion page. You can modi
 
 1. Download the repository.
 
-2. [Create a Python virtual environment](https://code.visualstudio.com/docs/python/environments#_creating-environments) and [activate it](https://docs.python.org/3/library/venv.html#how-venvs-work).
+1. Run `pip install -r requirements.txt`.
 
-3. Run `pip install -r requirements.txt`.
+1. In the `Config` section of the code, set `SCRIPT_DIRECTORY_ABS_PATH` to be the absolute path to the repository, e.g. `D:\Users\User\Path\To\universal-price-tracker`.
 
-4. In the `Config` section of the code, set `SCRIPT_DIRECTORY_ABS_PATH` to be the absolute path to the repository, e.g. `D:\Users\User\Path\To\universal-price-tracker`.
-
-5. Modify the rest of the configuration as desired.
+1. Modify the rest of the configuration as desired.
 
 ## Adding an Item to the List of Tracked Items
 
@@ -28,29 +26,29 @@ By default, it will alert you by posting an entry to a Notion page. You can modi
 
     1. Under `Item`, put the name of the item.
 
-    2. Under `URL`, put the URL of the page that contains the price.
+    1. Under `URL`, put the URL of the page that contains the price.
 
-    3. Under `CSS Selector`, put a CSS selector for the price HTML element.
+    1. Under `CSS Selector`, put a CSS selector for the price HTML element.
 
         1. To get the CSS selector, right-click the price and click `Inspect`.
       
         ![image](https://github.com/kellenvu/price-tracker/assets/56773806/2c52775e-dbcb-414c-9f50-46535c3d25d9)
 
-        2. Find the HTML element that contains the price, and look for an attribute that is unique to the price. In the example below, we can assume that only the price will have the attribute `data-testid="productdescriptionprice-price"`.
+        1. Find the HTML element that contains the price, and look for an attribute that is unique to the price. In the example below, we can assume that only the price will have the attribute `data-testid="productdescriptionprice-price"`.
       
         ![image](https://github.com/kellenvu/price-tracker/assets/56773806/cd445277-49e2-4f55-bf99-9aeca7a7748f)
 
-       3. Based on the unique attribute, come up with a [CSS selector](https://www.w3schools.com/cssref/css_selectors.php). In this example, the CSS selector would be `[data-testid="productdescriptionprice-price"]`. If you're having difficulty, you can also copy/paste the element into [ChatGPT](https://chat.openai.com/chat), and ask for a CSS selector.
+       1. Based on the unique attribute, come up with a [CSS selector](https://www.w3schools.com/cssref/css_selectors.php). In this example, the CSS selector would be `[data-testid="productdescriptionprice-price"]`. If you're having difficulty, you can also copy/paste the element into [ChatGPT](https://chat.openai.com/chat), and ask for a CSS selector.
       
        ![image](https://github.com/kellenvu/price-tracker/assets/56773806/cd0064d7-6362-4c1b-af0f-0e73cdb0eb96)
 
-   4. Under `Last Tracked Price`, put the current price (e.g. if the price is $68, then put `68`).
+   1. Under `Last Tracked Price`, put the current price (e.g. if the price is $68, then put `68`).
 
 ## Running the Program
 
 1. You can run the program once to update the price of each item in the Excel file. Just run `python track_price.py`.
 
-2. If you want the program to run periodically, you can set up a scheduler. On Windows, I followed [these instructions](https://stackoverflow.com/a/43988165) to create a .bat file that runs the program within my desired virtual environment, and then I followed [these instructions](https://helpdeskgeek.com/windows-11/how-to-schedule-a-batch-file-to-run-in-windows-11-10-using-task-scheduler/) to create a scheduler that runs this .bat file once per day.
+1. If you want the program to run periodically, you can set up a scheduler. On Windows, I followed [these instructions](https://stackoverflow.com/a/43988165) to create a .bat file that runs the program within my desired virtual environment, and then I followed [these instructions](https://helpdeskgeek.com/windows-11/how-to-schedule-a-batch-file-to-run-in-windows-11-10-using-task-scheduler/) to create a scheduler that runs this .bat file once per day.
 
 ## Setting Up Alerts
 
